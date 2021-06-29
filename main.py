@@ -72,10 +72,28 @@ def displayinfo(region):
 
 infofile = openfile()
 lines = infofile.readlines()
-getregions()
+regions = getregions()
 #displayinfo()
+int_region = 0
+while int_region != -1:
+  print('Select region. Use its number')
+  for i in range(1,len(regions)):
+    print(i,regions[i])
+  int_region = int(input('Region number: '))
+  if 0 < int_region < len(regions):
+    user_region = regions[int_region]
+    displayinfo(user_region)
+  else:
+    if int_region != -1:
+      print('invalid number')
 
-user_region = input("Enter the region\n")
+
+
+
+
+
+
+"""user_region = input("Enter the region\n")
 while user_region != "quit" :
   displayinfo(user_region)
-  user_region = input("Enter the region\n")
+  user_region = input("Enter the region\n")"""
